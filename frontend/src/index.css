@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-brand-text font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-surface rounded;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-border rounded hover:bg-brand-primary/40;
+  }
+}
+
+@layer components {
+  /* Primary Button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center h-9 px-4 rounded-md
+      bg-brand-primary text-white font-medium text-sm
+      hover:bg-brand-primary/90 active:bg-brand-primary/80
+      transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center h-8 px-3 rounded-md
+      bg-white text-brand-text font-medium text-sm border border-brand-border
+      hover:bg-brand-surface active:bg-brand-border/50
+      transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Danger Button */
+  .btn-danger {
+    @apply inline-flex items-center justify-center h-9 px-4 rounded-md
+      bg-brand-danger text-white font-medium text-sm
+      hover:bg-brand-danger/90 active:bg-brand-danger/80
+      transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Form Input */
+  .input {
+    @apply h-10 w-full px-3 rounded border border-brand-border bg-white
+      text-sm text-brand-text placeholder-brand-text-secondary/60
+      focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-brand-primary
+      transition-shadow duration-150 disabled:bg-brand-surface disabled:cursor-not-allowed;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white rounded-lg shadow-sm p-4 border border-brand-border/30;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-primary {
+    @apply badge bg-brand-primary/10 text-brand-primary;
+  }
+  .badge-success {
+    @apply badge bg-brand-success/10 text-brand-success;
+  }
+  .badge-warning {
+    @apply badge bg-brand-warning/10 text-brand-warning;
+  }
+  .badge-danger {
+    @apply badge bg-brand-danger/10 text-brand-danger;
+  }
+
+  /* Table */
+  .table-container {
+    @apply w-full overflow-x-auto rounded-lg border border-brand-border/30;
+  }
+  .table-container table {
+    @apply w-full text-sm;
+  }
+  .table-container thead {
+    @apply bg-brand-surface sticky top-0;
+  }
+  .table-container th {
+    @apply px-4 py-3 text-left font-semibold text-brand-text-secondary uppercase text-xs tracking-wider;
+  }
+  .table-container tbody tr {
+    @apply border-t border-brand-border/20 hover:bg-brand-primary/5 transition-colors;
+  }
+  .table-container tbody tr:nth-child(even) {
+    @apply bg-brand-surface/50;
+  }
+  .table-container td {
+    @apply px-4 py-3;
+  }
+}
+
+@layer utilities {
+  .sidebar-active {
+    @apply border-l-[3px] border-brand-primary bg-white/5;
+  }
+}
