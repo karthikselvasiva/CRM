@@ -35,11 +35,11 @@ const ProfilePage: React.FC = () => {
         viewer: 'Viewer',
     };
 
-    const roleBadgeVariant: Record<string, 'blue' | 'green' | 'yellow' | 'gray'> = {
-        admin: 'blue',
-        sales_manager: 'green',
-        sales_rep: 'yellow',
-        viewer: 'gray',
+    const roleBadgeVariant: Record<string, 'primary' | 'success' | 'warning' | 'danger' | 'neutral'> = {
+        admin: 'primary',
+        sales_manager: 'success',
+        sales_rep: 'warning',
+        viewer: 'neutral',
     };
 
     if (!user) return null;
@@ -97,7 +97,7 @@ const ProfilePage: React.FC = () => {
                                     <p className="text-sm font-medium text-brand-text">
                                         {roleLabel[user.role] || user.role}
                                     </p>
-                                    <Badge variant={roleBadgeVariant[user.role] || 'gray'}>
+                                    <Badge variant={roleBadgeVariant[user.role] || 'neutral'}>
                                         {user.role}
                                     </Badge>
                                 </div>

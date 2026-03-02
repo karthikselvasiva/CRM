@@ -159,7 +159,7 @@ const DealsPage: React.FC = () => {
             const data = res.data.data;
             if (data.length > 0 && !activePipeline) {
                 const defaultPipeline = data.find(p => p.is_default) || data[0];
-                setActivePipeline(defaultPipeline);
+                setActivePipeline(defaultPipeline || null);
             }
         } catch (err) {
             console.error('Failed to load pipelines:', err);

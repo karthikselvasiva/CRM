@@ -99,8 +99,10 @@ const RuleBuilderModal: React.FC<RuleBuilderModalProps> = ({
 
     const handleActionConfigChange = (index: number, key: string, value: string) => {
         const newActions = [...actions];
-        newActions[index].config = { ...newActions[index].config, [key]: value };
-        setActions(newActions);
+        if (newActions[index]) {
+            newActions[index].config = { ...(newActions[index].config || {}), [key]: value };
+            setActions(newActions);
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {

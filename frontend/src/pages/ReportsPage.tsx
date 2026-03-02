@@ -135,7 +135,7 @@ const ReportsPage: React.FC = () => {
                                     paddingAngle={2}
                                     dataKey="value"
                                 >
-                                    {metrics.leadsByStatus.map((entry, index) => (
+                                    {metrics.leadsByStatus.map((_entry, index) => (
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
                                 </Pie>
