@@ -13,7 +13,7 @@ class Settings:
     APP_ENV: str = os.getenv("APP_ENV", "development")
 
     # JWT settings
-    JWT_SECRET: str = os.getenv("JWT_SECRET", "crm-dev-secret-change-in-production-2024")
+    JWT_SECRET: str = os.getenv("JWT_SECRET", os.getenv("SUPABASE_JWT_SECRET", "crm-dev-secret-change-in-production-2024"))
     JWT_ALGORITHM: str = "HS256"
     JWT_ACCESS_EXPIRE_MINUTES: int = int(os.getenv("JWT_ACCESS_EXPIRE_MINUTES", "60"))
     JWT_REFRESH_EXPIRE_MINUTES: int = int(os.getenv("JWT_REFRESH_EXPIRE_MINUTES", "10080"))  # 7 days
